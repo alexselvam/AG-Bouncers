@@ -1,0 +1,144 @@
+<section class="booking-section" id="booking">
+
+  <div class="booking-container">
+
+    <div class="booking-heading">
+
+      <div class="section-label">
+        <span></span>
+        SECURE YOUR EVENT
+      </div>
+
+      <h2>
+        LET'S PLAN YOUR<br>
+        <span>SECURITY.</span>
+      </h2>
+
+      <p>
+        Tell us about your requirements. Our team will
+        get in touch to discuss the right security solution
+        for your event.
+      </p>
+
+    </div>
+
+    <form class="booking-form" #bookingForm="ngForm"
+      (ngSubmit)="submitBooking()">
+
+      <div class="form-heading">
+        <h3>BOOK OUR TEAM</h3>
+        <span>BOOKING ENQUIRY / AG-01</span>
+      </div>
+
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label>FULL NAME *</label>
+          <input
+            type="text"
+            name="name"
+            [(ngModel)]="booking.name"
+            placeholder="Enter your name"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label>PHONE NUMBER *</label>
+          <input
+            type="tel"
+            name="phone"
+            [(ngModel)]="booking.phone"
+            placeholder="Enter mobile number"
+            pattern="[0-9]{10}"
+            maxlength="10"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label>EVENT TYPE *</label>
+          <select
+            name="eventType"
+            [(ngModel)]="booking.eventType"
+            required
+          >
+            <option value="" disabled>Select event type</option>
+            <option>VIP Protection</option>
+            <option>Celebrity Bodyguards</option>
+            <option>Wedding Security</option>
+            <option>Crowd Management</option>
+            <option>Temple Festival Security</option>
+            <option>Pub & Nightclub Security</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>EVENT DATE *</label>
+          <input
+            type="date"
+            name="eventDate"
+            [(ngModel)]="booking.eventDate"
+            [min]="today"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label>EVENT LOCATION *</label>
+          <input
+            type="text"
+            name="location"
+            [(ngModel)]="booking.location"
+            placeholder="Enter event location"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label>TEAM SIZE REQUIRED</label>
+          <select
+            name="teamSize"
+            [(ngModel)]="booking.teamSize"
+          >
+            <option value="">Select team size</option>
+            <option>1–2 Personnel</option>
+            <option>3–5 Personnel</option>
+            <option>6–10 Personnel</option>
+            <option>11–20 Personnel</option>
+            <option>20+ Personnel</option>
+            <option>Need consultation</option>
+          </select>
+        </div>
+
+        <div class="form-group full-width">
+          <label>ADDITIONAL DETAILS</label>
+          <textarea
+            name="message"
+            [(ngModel)]="booking.message"
+            placeholder="Tell us more about your security requirements..."
+            rows="4"
+          ></textarea>
+        </div>
+
+      </div>
+
+      <button
+        type="submit"
+        class="booking-submit"
+        [disabled]="bookingForm.invalid"
+      >
+        SEND BOOKING ENQUIRY
+        <span>↗</span>
+      </button>
+
+      <p class="form-note">
+        Your enquiry will be sent through WhatsApp.
+      </p>
+
+    </form>
+
+  </div>
+
+</section>

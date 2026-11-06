@@ -1,0 +1,59 @@
+<section class="team-section" id="team">
+
+  <div class="team-container">
+
+    <div class="section-label">
+      <span></span>
+      THE PEOPLE BEHIND THE PROTECTION
+    </div>
+
+    <div class="team-heading">
+      <h2>
+        BUILT ON DISCIPLINE.<br>
+        <span>UNITED BY PURPOSE.</span>
+      </h2>
+
+      <p>
+        Professional security begins with the people behind it.
+        Our team is committed to discipline, responsibility
+        and professional conduct.
+      </p>
+    </div>
+
+    <div class="team-grid">
+
+      @for (role of teamRoles; track role.number) {
+
+        <article class="team-card">
+
+          <div class="team-card-top">
+            <span>{{ role.number }}</span>
+            <span class="team-symbol">AG</span>
+          </div>
+
+          <div class="team-card-content">
+            <div class="team-line"></div>
+
+            <h3>{{ role.title }}</h3>
+
+            <p>{{ role.description }}</p>
+          </div>
+
+          <div class="team-card-bottom">
+            <span>AG BOUNCERS</span>
+            <span>● MADURAI</span>
+          </div>
+
+        </article>
+
+      }
+
+    </div>
+
+    <div class="team-footer">
+      <p>ONE TEAM. ONE STANDARD. COMPLETE COMMITMENT.</p>
+    </div>
+
+  </div>
+
+</section>

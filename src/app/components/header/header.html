@@ -1,0 +1,33 @@
+<header class="header">
+    <div class="header-inner">
+
+        <a href="#home" class="brand">
+            <div class="brand-logo">
+                <span class="crown">♛</span>
+                <span>AG</span>
+            </div>
+
+            <div class="brand-text">
+                <h2>AG <span>BOUNCERS</span></h2>
+                <p>MADURAI · TAMIL NADU</p>
+            </div>
+        </a>
+
+        <button class="menu-btn" (click)="toggleMenu()">
+            {{ menuOpen ? '✕' : '☰' }}
+        </button>
+
+        <nav [class.open]="menuOpen">
+            <a href="#home" (click)="closeMenu()">HOME</a>
+            <a href="#about" (click)="closeMenu()">ABOUT</a>
+            <a href="#services" (click)="closeMenu()">SERVICES</a>
+            <a href="#team" (click)="closeMenu()">OUR TEAM</a>
+            <a href="#gallery" (click)="closeMenu()">GALLERY</a>
+           <a href="#location" (click)="closeMenu()">Location</a>
+            <a href="#contact" (click)="closeMenu()">CONTACT</a>
+
+            <a href="#booking" class="nav-cta" (click)="closeMenu()">BOOK OUR TEAM ↗</a>
+        </nav>
+
+    </div>
+</header>

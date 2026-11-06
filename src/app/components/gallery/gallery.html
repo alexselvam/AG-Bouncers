@@ -1,0 +1,54 @@
+<section class="gallery-section" id="gallery">
+
+    <div class="gallery-container">
+
+        <div class="section-label">
+            <span></span>
+            OUR WORK IN ACTION
+        </div>
+
+        <div class="gallery-heading">
+
+            <h2>
+                PRESENCE.<br>
+                <span>IN EVERY FRAME.</span>
+            </h2>
+
+            <p>
+                A closer look at our security operations,
+                event presence and professional commitment.
+            </p>
+
+        </div>
+
+        <div class="gallery-grid">
+
+            @for (item of galleryItems; track item.title) {
+
+            <div class="gallery-item" (mouseenter)="playVideo($event)" (mouseleave)="stopVideo($event)"
+                (touchstart)="toggleVideo($event)">
+
+                <img class="gallery-image" [src]="item.image" [alt]="item.title" loading="lazy">
+
+                <video class="gallery-video" muted loop playsinline preload="none">
+                    <source [src]="item.video" type="video/mp4">
+                </video>
+
+                <div class="gallery-caption">
+                    <h3>{{ item.title }}</h3>
+                    <span class="video-hint">TAP TO PLAY ↗</span>
+                </div>
+
+            </div>
+
+            }
+
+        </div>
+
+        <div class="gallery-bottom">
+            <p>REAL PEOPLE. PROFESSIONAL SECURITY. AG BOUNCERS.</p>
+        </div>
+
+    </div>
+
+</section>

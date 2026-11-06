@@ -1,0 +1,165 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 88px;
+  z-index: 1000;
+  background: rgba(12, 13, 15, 0.92);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.header-inner {
+  max-width: 1450px;
+  height: 100%;
+  margin: auto;
+  padding: 0 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 49px;
+  height: 49px;
+  border: 1px solid #e31b32;
+  color: white;
+  display: grid;
+  place-items: center;
+  position: relative;
+  font-size: 25px;
+  font-weight: 900;
+  transform: rotate(45deg);
+}
+
+.brand-logo span {
+  transform: rotate(-45deg);
+}
+
+.brand-logo .crown {
+  position: absolute;
+  top: -15px;
+  right: -9px;
+  color: #e31b32;
+  font-size: 17px;
+}
+
+.brand-text h2 {
+  color: white;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.brand-text h2 span {
+  color: #e31b32;
+}
+
+.brand-text p {
+  color: #888;
+  font-size: 8px;
+  letter-spacing: 2px;
+  margin-top: 5px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+nav a {
+  color: #c7c7c7;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #e31b32;
+}
+
+nav .nav-cta {
+  background: #e31b32;
+  padding: 15px 20px;
+  color: white;
+}
+
+nav .nav-cta:hover {
+  background: white;
+  color: #111;
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  color: white;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+@media(max-width: 950px) {
+  .menu-btn {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 88px;
+    left: 0;
+    width: 100%;
+    padding: 20px 7%;
+    background: #111214;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  nav a {
+    padding: 17px 5px;
+    border-bottom: 1px solid #292929;
+  }
+
+  nav .nav-cta {
+    text-align: center;
+    margin-top: 15px;
+  }
+}
+
+@media(max-width: 480px) {
+  .header {
+    height: 75px;
+  }
+
+  nav {
+    top: 75px;
+  }
+
+  .brand-text h2 {
+    font-size: 16px;
+  }
+
+  .brand-logo {
+    width: 40px;
+    height: 40px;
+    font-size: 21px;
+  }
+}

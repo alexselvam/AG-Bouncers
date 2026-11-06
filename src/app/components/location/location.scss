@@ -1,0 +1,163 @@
+.location-section {
+  width: 100%;
+  padding: 110px 7%;
+  background: #101113;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.location-container {
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  gap: 65px;
+}
+
+/* LEFT CONTENT */
+
+.location-content {
+  width: 100%;
+}
+
+.section-label {
+  display: inline-block;
+  color: #e31b32;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 22px;
+}
+
+.location-content h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(36px, 4vw, 58px);
+  font-weight: 800;
+  line-height: 1.08;
+  margin: 0 0 25px;
+  text-align: left;
+}
+
+.location-content h2 span {
+  display: block;
+  color: #e31b32;
+}
+
+.location-description {
+  color: #b7b7b7;
+  font-size: 15px;
+  line-height: 1.9;
+  max-width: 480px;
+  margin-bottom: 35px;
+}
+
+.location-details {
+  border-left: 3px solid #e31b32;
+  padding-left: 20px;
+  margin-bottom: 35px;
+}
+
+.detail-label {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.location-details p {
+  color: #b7b7b7;
+  font-size: 15px;
+  line-height: 1.9;
+  margin: 12px 0 0;
+}
+
+/* DIRECTIONS BUTTON */
+
+.directions-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 17px 28px;
+  background: #e31b32;
+  color: #ffffff;
+
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  transition: 0.3s ease;
+}
+
+.directions-btn:hover {
+  background: #ffffff;
+  color: #e31b32;
+  transform: translateY(-4px);
+}
+
+/* MAP */
+
+.location-map {
+  width: 100%;
+  height: 450px;
+  border: 1px solid #333;
+  overflow: hidden;
+}
+
+.location-map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(100%) contrast(90%);
+  transition: 0.4s ease;
+}
+
+.location-map:hover iframe {
+  filter: grayscale(0%);
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .location-section {
+    padding: 80px 5%;
+  }
+
+  .location-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .location-map {
+    height: 380px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .location-section {
+    padding: 65px 20px;
+  }
+
+  .location-content h2 {
+    font-size: 39px;
+  }
+
+  .location-description {
+    font-size: 14px;
+  }
+
+  .location-map {
+    height: 300px;
+  }
+
+  .directions-btn {
+    padding: 15px 22px;
+  }
+}

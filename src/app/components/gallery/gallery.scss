@@ -1,0 +1,261 @@
+.gallery-section {
+  background: #101113;
+  color: #fff;
+  padding: 120px 7%;
+}
+
+.gallery-container {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #e31b32;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.section-label span {
+  width: 32px;
+  height: 2px;
+  background: #e31b32;
+}
+
+.gallery-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 40px;
+  margin-bottom: 55px;
+}
+
+.gallery-heading h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(48px, 6vw, 82px);
+  font-weight: 900;
+  line-height: 0.9;
+}
+
+.gallery-heading h2 span {
+  color: #e31b32;
+}
+
+.gallery-heading p {
+  max-width: 350px;
+  color: #a6a6a8;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+  width: 100%;
+  max-width: 1500px;
+  margin: 50px auto 0;
+}
+
+.gallery-card {
+  position: relative;
+  aspect-ratio: 1.15 / 1;
+  background: #242528;
+  overflow: hidden;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  filter: grayscale(70%) brightness(0.65);
+  transition: transform 0.6s, filter 0.6s;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.08);
+  filter: grayscale(0%) brightness(0.8);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.2),
+    transparent 35%,
+    rgba(0, 0, 0, 0.85)
+  );
+}
+
+.gallery-number {
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.gallery-info p {
+  color: #e31b32;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.gallery-info h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.gallery-arrow {
+  position: absolute;
+  right: 22px;
+  bottom: 22px;
+  color: #fff;
+  font-size: 22px;
+  transition: 0.3s;
+}
+
+.gallery-card:hover .gallery-arrow {
+  color: #e31b32;
+  transform: translate(4px, -4px);
+}
+
+.gallery-bottom {
+  border-top: 1px solid #38393c;
+  margin-top: 35px;
+  padding-top: 22px;
+}
+
+.gallery-bottom p {
+  text-align: center;
+  color: #777;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 850px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-heading {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+@media (max-width: 550px) {
+  .gallery-section {
+    padding: 85px 6%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-card {
+    aspect-ratio: 1.15 / 1;
+  }
+}
+
+.gallery-item {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.gallery-image,
+.gallery-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease, transform 0.5s ease;
+}
+
+.gallery-image {
+  opacity: 1;
+  z-index: 2;
+}
+
+.gallery-video {
+  opacity: 0;
+  z-index: 1;
+}
+
+/* Desktop hover + Mobile tap */
+
+.gallery-item:hover .gallery-image,
+.gallery-item.playing .gallery-image {
+  opacity: 0;
+}
+
+.gallery-item:hover .gallery-video,
+.gallery-item.playing .gallery-video {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+.gallery-caption {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 3;
+  padding: 45px 20px 20px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.9));
+  pointer-events: none;
+}
+
+.gallery-caption h3 {
+  color: #fff;
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+.video-hint {
+  display: none;
+  color: #e31b32;
+  font-size: 10px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .video-hint {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .gallery-item {
+    height: 350px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .gallery-item {
+    height: 360px;
+  }
+}
